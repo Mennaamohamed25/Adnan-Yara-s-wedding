@@ -8,45 +8,46 @@ export default function Home() {
   const router = useRouter();
 
   const scrollToSection = () => {
-    if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+    sectionRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (
     <main>
       {/* First Section */}
-<section className="relative h-screen flex items-center justify-center flex-col text-white overflow-hidden">
-  
-  {/* 🎥 Video Background */}
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="absolute top-0 left-0 w-full h-full object-cover"
-  >
-    <source src="/bg.mp4" type="video/mp4" />
-  </video>
+      <section className="relative h-screen flex items-center justify-center flex-col text-white overflow-hidden">
 
-  {/* Overlay (عشان الكلام يبقى واضح) */}
-  <div className="absolute top-0 left-0 w-full h-full bg-black/30"></div>
+        {/* 🎥 Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        >
+          <source src="/bg.mp4" type="video/mp4" />
+        </video>
 
-  {/* Content */}
-  <div className="relative z-10 flex flex-col items-center">
-    <h1 className="text-6xl font-serif mb-10 text-[#CE6F79]">
-      Scroll down
-    </h1>
+        {/* Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black/30" />
 
-    <div
-      className="flex flex-col items-center gap-2 cursor-pointer"
-      onClick={scrollToSection}
-    >
-      <div className="arrow arrow1"></div>
-      <div className="arrow arrow2"></div>
-    </div>
-  </div>
-</section>
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center">
+          <h1 className="text-6xl font-serif mb-10 text-[#CE6F79]">
+            Scroll down
+          </h1>
+
+          <div
+            className="flex flex-col items-center gap-2 cursor-pointer"
+            onClick={scrollToSection}
+          >
+            <div className="arrow arrow1" />
+            <div className="arrow arrow2" />
+          </div>
+        </div>
+      </section>
 
       {/* Envelope Section */}
       <section
