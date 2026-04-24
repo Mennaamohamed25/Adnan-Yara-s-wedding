@@ -24,3 +24,36 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.arrow {
+  width: 30px;
+  height: 30px;
+  border-left: 5px solid white;
+  border-bottom: 5px solid white;
+  transform: rotate(-45deg);
+}
+
+/* أول سهم */
+.arrow1 {
+  animation: fadeDown 1.5s infinite;
+}
+
+/* تاني سهم */
+.arrow2 {
+  animation: fadeDown 1.5s infinite;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0px) rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px) rotate(-45deg);
+  }
+}
