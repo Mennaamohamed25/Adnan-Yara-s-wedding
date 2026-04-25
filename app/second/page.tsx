@@ -45,7 +45,7 @@ export default function SecondPage() {
             animate={{ opacity: 0, y: -20 }}
             transition={{ duration: 1.2, delay: 0.5 }}
           >
-            <h1 className="text-white text-4xl md:text-5xl font-semibold text-center">
+            <h1 className="text-[#CE6F79] text-4xl md:text-5xl font-semibold text-center">
               You’re Invited 💌
             </h1>
           </motion.div>
