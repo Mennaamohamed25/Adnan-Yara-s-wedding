@@ -2,6 +2,12 @@
 
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
+import localFont from "next/font/local";
+import { motion } from "framer-motion";
+
+const carnation = localFont({
+  src: "./Carnation.ttf",
+});
 
 export default function Home() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -15,52 +21,109 @@ export default function Home() {
   };
 
   return (
-    <main>
-      {/* First Section */}
-      <section className="relative h-screen flex items-center justify-center flex-col text-white overflow-hidden">
+    <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
 
-        {/* 🎥 Video Background */}
+      {/* ========== SECTION 1 ========== */}
+      <section className="snap-start h-screen relative flex items-center justify-center flex-col overflow-hidden">
+
+        {/* VIDEO */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/bg.mp4" type="video/mp4" />
         </video>
 
-        {/* Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black/30" />
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/20" />
 
-        {/* Content */}
+        {/* CONTENT */}
         <div className="relative z-10 flex flex-col items-center">
-          <h1 className="text-6xl font-serif mb-10 text-[#CE6F79]">
+          <h1 className={`text-5xl md:text-7xl mb-16 text-[#CE6F79] ${carnation.className}`}>
             Scroll down
           </h1>
 
+          {/* ARROWS */}
           <div
-            className="flex flex-col items-center gap-2 cursor-pointer"
             onClick={scrollToSection}
+            className="flex flex-col items-center cursor-pointer"
           >
-            <div className="arrow arrow1" />
-            <div className="arrow arrow2" />
+            {/* Arrow 1 */}
+            <motion.div
+              style={{
+                width: 22,
+                height: 22,
+                borderRight: "3px solid #CE6F79",
+                borderBottom: "3px solid #CE6F79",
+                rotate: 45,
+              }}
+              animate={{
+                opacity: [0, 0.6, 0],
+                y: [-8, 0, 8],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Arrow 2 */}
+            <motion.div
+              style={{
+                width: 22,
+                height: 22,
+                borderRight: "3px solid #CE6F79",
+                borderBottom: "3px solid #CE6F79",
+                rotate: 45,
+                marginTop: -10,
+              }}
+              animate={{
+                opacity: [1, 1, 0],
+                y: [0, 8, 16],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
           </div>
         </div>
       </section>
 
-      {/* Envelope Section */}
+      {/* ========== SECTION 2 ========== */}
       <section
         ref={sectionRef}
-        className="h-screen flex items-center justify-center bg-white"
+        className="snap-start h-screen relative flex items-center justify-center overflow-hidden"
       >
+
+        {/* VIDEO */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/bg.mp4" type="video/mp4" />
+        </video>
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/20" />
+
+        {/* IMAGE */}
         <img
-          src="/envelope.png"
+          src="/thisone.png"
           alt="envelope"
-          className="w-40 cursor-pointer transition hover:scale-110"
+          className="relative z-10 w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/2 cursor-pointer transition duration-500 hover:scale-110"
           onClick={() => router.push("/second")}
         />
       </section>
+
     </main>
   );
 }
