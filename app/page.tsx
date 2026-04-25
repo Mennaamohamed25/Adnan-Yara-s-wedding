@@ -117,7 +117,7 @@ export default function Home() {
 
         {/* IMAGE */}
         <img
-          src="/thisone.png"
+          src="/thisone.jpeg"
           alt="envelope"
           className="relative z-10 w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/2 cursor-pointer transition duration-500 hover:scale-110"
           onClick={() => router.push("/second")}

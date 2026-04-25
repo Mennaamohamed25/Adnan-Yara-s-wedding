@@ -17,57 +17,59 @@ export default function SecondPage() {
         <source src="/bg.mp4" type="video/mp4" />
       </video>
 
-      {/* dark overlay optional */}
-      <div className="fixed inset-0 bg-black/30 -z-10" />
+      {/* dark overlay */}
+      <div className="fixed inset-0  -z-10" />
 
       {/* ========== SECTION 1 ========== */}
-      
-    <section className="snap-start h-screen flex items-center justify-center overflow-hidden">
+      <section className="snap-start h-screen flex items-center justify-center overflow-hidden">
 
-  <div className="relative z-10 w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/4">
+        <div className="relative z-10 w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/4">
 
-    {/* VIDEO */}
-    <motion.video
-      src="/inv.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-      className="w-full rounded-2xl"
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 1, delay: 0.8 }}
-    />
+          {/* VIDEO */}
+          <motion.video
+            src="/inv.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full rounded-2xl"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          />
 
-    {/* TEXT BEFORE / INTRO */}
-    <motion.div
-      className="absolute inset-0 flex items-center justify-center"
-      initial={{ opacity: 1, y: 0 }}
-      animate={{ opacity: 0, y: -20 }}
-      transition={{ duration: 1.2, delay: 0.5 }}
-    >
-      <h1 className="text-white text-4xl md:text-5xl font-semibold text-center">
-        You’re Invited 💌
-      </h1>
-    </motion.div>
+          {/* INTRO TEXT */}
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0, y: -20 }}
+            transition={{ duration: 1.2, delay: 0.5 }}
+          >
+            <h1 className="text-white text-4xl md:text-5xl font-semibold text-center">
+              You’re Invited 💌
+            </h1>
+          </motion.div>
 
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* ========== SECTION 2 ========== */}
-    <p className="relative z-10 text-white text-4xl mt-16 mb-7 font-semibold flex items-center justify-center gap-2">
-  Our location <span>📍</span>
-</p>
-      <section className="snap-start h-screen flex items-center justify-center">
+      <section className="snap-start h-screen flex flex-col items-center justify-center gap-6">
 
-        <div className="relative z-10 w-3/4 md:w-1/3">
+        <p className="text-[#CE6F79] text-4xl font-semibold flex items-center gap-2 mb-6">
+          Our location <span>📍</span>
+        </p>
 
+        <div className="relative z-10 relative z-10 w-5/6 sm:w-2/3 md:w-1/2 lg:w-1/3">
+
+          {/* IMAGE */}
           <img
             src="/loc.png"
             alt="location"
             className="w-full"
           />
 
+          {/* RESPONSIVE BUTTON */}
           <button
             onClick={() =>
               window.open(
@@ -75,7 +77,20 @@ export default function SecondPage() {
                 "_blank"
               )
             }
-            className="absolute bottom-40 left-1/2 -translate-x-1/2 px-6 py-3 bg-[#CE6F79] text-white rounded-full text-lg hover:scale-110 transition shadow-lg"
+className="
+  absolute
+  left-1/2 -translate-x-1/2
+  bottom-[25%]
+  px-6 sm:px-6 md:px-6
+  py-3 sm:py-3 md:py-3
+  bg-[#CE6F79]/90 backdrop-blur-md
+  text-white
+  font-semibold
+  rounded-full
+  text-base sm:text-base md:text-lg
+  hover:scale-110 transition shadow-xl
+  cursor-pointer
+"
           >
             Open Location
           </button>
@@ -85,17 +100,16 @@ export default function SecondPage() {
 
       {/* ========== SECTION 3 ========== */}
       <section className="snap-start h-screen flex flex-col items-center justify-center gap-6">
-  <p className="relative z-10 text-white text-4xl mb-7 font-semibold">
-          Scan to join WhatsApp group 📸
-        </p>
+
+       <p className="text-[#CE6F79] text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold mb-7 text-center px-4">
+  Scan to join WhatsApp group 📸
+</p>
 
         <img
           src="/qr.png"
           alt="QR Code"
-          className="relative z-10 w-2/3 md:w-1/4 rounded-xl shadow-xl"
+          className="w-2/3 md:w-1/4 rounded-xl shadow-xl"
         />
-
-      
 
       </section>
 
