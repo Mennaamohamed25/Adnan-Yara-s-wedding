@@ -80,7 +80,7 @@ export default function SecondPage() {
             }
             className="absolute left-1/2 -translate-x-1/2 bottom-[20%]
             px-6 py-3 bg-[#CE6F79]/90 backdrop-blur-md text-white
-            rounded-full text-base md:text-lg hover:scale-110 transition shadow-xl"
+            rounded-full text-base md:text-lg hover:scale-110 transition shadow-xl cursor-pointer"
           >
             Open Location
           </button>
@@ -89,19 +89,45 @@ export default function SecondPage() {
       </section>
 
       {/* ========== SECTION 3 ========== */}
-      <section className="snap-start h-screen flex flex-col items-center justify-center gap-6">
+<section className="snap-start h-screen flex flex-col items-center justify-center gap-6">
 
-        <p className="text-[#CE6F79] text-3xl md:text-4xl font-semibold mb-7 text-center px-4  ">
-          Scan to join WhatsApp group 📸
-        </p>
+  <p className="text-[#CE6F79] text-3xl md:text-4xl font-semibold mb-7 text-center px-4">
+     Scan to join & share memories 📸
+  </p>
 
-        <img
-          src="/qr.png"
-          alt="QR Code"
-          className="w-2/3 md:w-1/4 rounded-xl shadow-xl"
-        />
+  <img
+    src="/qr.png"
+    alt="QR Code"
+    className="w-2/3 md:w-1/4 rounded-xl shadow-xl"
+  />
 
-      </section>
+  {/* BUTTON */}
+  <button
+    onClick={() =>
+      window.open(
+        "https://chat.whatsapp.com/CUMUG63le4F3PUxQToDELf?mode=gi_t",
+        "_blank"
+      )
+    }
+    className="
+      px-6 py-3
+      bg-[#CE6F79]
+      text-white
+      rounded-full
+      text-base md:text-lg
+      font-semibold
+      hover:scale-110
+      transition
+      shadow-lg
+      mt-4
+      cursor-pointer
+    "
+  >
+      You can join now <span className="text-pink-400">💗</span>
+
+  </button>
+
+</section>
 
     </main>
   );
