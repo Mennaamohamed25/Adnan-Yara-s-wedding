@@ -63,7 +63,7 @@ export default function SecondPage() {
       {/* ========== SECTION 2 ========== */}
       <section className="snap-start h-screen flex flex-col items-center justify-center gap-6">
 
-        <p className="text-[#CE6F79] text-3xl md:text-4xl font-semibold mb-7 text-center px-4 ">
+        <p className="text-[#CE6F79] text-3xl md:text-4xl font-bold mb-7 text-center px-4 ">
           Our location 📍
         </p>
 
@@ -80,7 +80,7 @@ export default function SecondPage() {
             }
             className="absolute left-1/2 -translate-x-1/2 bottom-[20%]
             px-6 py-3 bg-[#CE6F79]/90 backdrop-blur-md text-white
-            rounded-full text-base md:text-lg hover:scale-110 transition shadow-xl cursor-pointer"
+            rounded-full text-base md:text-lg hover:scale-110 transition shadow-xl cursor-pointer font-bold"
           >
             Open Location
           </button>
