@@ -63,7 +63,7 @@ export default function SecondPage() {
       {/* ========== SECTION 2 ========== */}
       <section className="snap-start h-screen flex flex-col items-center justify-center gap-6">
 
-        <p className="text-[#CE6F79] text-3xl md:text-4xl font-semibold mb-7 text-center px-4 mt-24">
+        <p className="text-[#CE6F79] text-3xl md:text-4xl font-semibold mb-7 text-center px-4 ">
           Our location 📍
         </p>
 
@@ -91,7 +91,7 @@ export default function SecondPage() {
       {/* ========== SECTION 3 ========== */}
       <section className="snap-start h-screen flex flex-col items-center justify-center gap-6">
 
-        <p className="text-[#CE6F79] text-3xl md:text-4xl font-semibold mb-7 text-center px-4  mt-24">
+        <p className="text-[#CE6F79] text-3xl md:text-4xl font-semibold mb-7 text-center px-4  ">
           Scan to join WhatsApp group 📸
         </p>
 
